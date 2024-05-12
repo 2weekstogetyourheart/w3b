@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css'); /* Иконки https://pictogrammers.com/library/mdi/ */
+
+:root {
+    --font-family: 'Inter'; /* Шрифт на странице */
+
+    --background: #0a0a0a; /* Фон страницы */
+    --foreground: #fff; /* Цвет текста на странице */
+    --shadow: rgba(230, 53, 53, .5); /* Цвет тени */
+
+    --link: #e63535; /* Цвет ссылок <a> */
+    --link-hovered: #f74c4c; /* Цвет ссылок при наведение <a> */
+
+    --input: #161616; /* Фон для текстового поля */
+    --input-focused: #212121; /* Фон при активном текстовом поле */
+    --input-foreground: #fff; /* Цвет текста в текстовом поле */
+    --input-placeholder: #999; /* Цвет текста подсказки в текстовом поле */
+
+    --header-scale: 4.5rem; /* Скейл фактор хедера, влияет на высоту и отступ от края у дочерних элементов */
+    --header-logotype-scale: 3.5rem; /* Скейл фактор логотипа в хеере */
+    --header-title-fs: 1.5rem; /* Размер шрифта у заголовка в хедере */
+    --header-title-fw: 500; /* Толщина шрифта у заголовка в хедере */
+    --header-title: #fff; /* Цвет заголовка в хедере */
+
+    --login-rounding: 1.5rem; /* Скругление формы авторизации */
+    --login-width: 450px; /* Ширина формы авторизации */
+    --login-mt: 6rem; /* Отступ от хедера формы авторизации */
+    --login-spacing: 1.25rem; /* Отступ шапки от рута в форме авторизации */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*:focus, *:active, *:focus:active {
+    outline: none !important;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+}
+
+body, input, button, textarea {
+    font-family: var(--font-family), sans-serif;
+    font-optical-sizing: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+    transition: color .25s;
+}
+
+a:hover { color: var(--link-hovered); }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #141313;
+    height: var(--header-scale);
+    padding: 0 var(--header-scale);
+}
+
+.header .logotype {
+    height: var(--header-logotype-scale);
+}
+
+.header .title {
+    text-align: center;
+    color: var(--header-title);
+    font-size: var(--header-title-fs);
+    font-weight: var(--header-title-fw);
+}
+
+.header .empty {
+    width: var(--header-logotype-scale);
+}
+
+.block__login {
+    width: var(--login-width);
+    margin: var(--login-mt) auto 0;
+}
+
+.block__login .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #080808;
+    border-radius: var(--login-rounding) var(--login-rounding) 0 0;
+    box-shadow: 0 .125rem .5rem var(--shadow);
+}
+
+.block__login .top .logotype, .block__login .top .empty {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.block__login .top .title {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.block__login .top .subtitle {
+    color: #999;
+    font-size: .9rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.block__login .body {
+    background: #080808;
+    margin-top: var(--login-spacing);
+    border-radius: 0 0 var(--login-rounding) var(--login-rounding);
+    padding: 5rem 2rem 2rem;
+    box-shadow: 0 .125rem .5rem var(--shadow);
+}
+
+.block__login .body input {
+    border: 0;
+    width: 100%;
+    background: var(--input);
+    color: var(--input-foreground);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: .5rem;
+    padding: .75rem;
+    border-radius: .375rem;
+    transition: background .25s;
+}
+
+.block__login .body input:focus, .block__login .body input:valid { background: var(--input-focused); }
+
+.block__login .body button {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: linear-gradient(to top, transparent, #696a66);
+    color: #080808;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: .75rem 3rem;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: color .25s, background .25s;
+}
+
+.block__login .body button i {
+    width: 2rem;
+    text-align: left;
+    transition: color .25s;
+}
+
+.block__login .body button i {
+    color: #555;
+}
+
+.block__login .body button:hover, .block__login .body button:hover i {
+    color: #888;
+}
+
+.block__home, .block__error {
+    width: 30rem;
+    margin: 6rem auto 0;
+}
+
+.block__home .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.block__home .subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.block__home a {
+    border: 1px solid #6c0606;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, #6c0606, transparent);
+    padding: .75rem 2rem;
+    border-radius: .5rem;
+}
+
+.block__error .title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.block__error .item {
+    position: relative;
+    margin-bottom: .5rem;
+    color: #999;
+}
+
+.block__error .item::after {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 50%;
+    width: 1rem;
+    height: 2px;
+    background: #999;
+}

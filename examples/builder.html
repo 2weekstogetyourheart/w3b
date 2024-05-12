@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Builder</title>
+</head>
+<body>
+
+    <header class="header">
+        <img class="logotype" src="../assets/images/logo/logo.svg">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/authed/" class="header__nav-link">DASHBOARD</a></li>
+                <li class="header__nav-item"><a href="/logs/" class="header__nav-link">LOGS</a></li>
+                <li class="header__nav-item"><a href="/builder/" class="header__nav-link">BUILDER</a></li>
+                <li class="header__nav-item"><a href="/convertor/" class="header__nav-link">COOKIES CONVERTER</a></li>
+                <li class="header__nav-item"><a href="https://t.me/detonatorscrew" class="header__nav-link">SUPPORT</a></li>
+            </ul>
+        </nav>
+        <div class="powrotic">
+            Expire: 
+            <span class="powrotic__bottom">{{.}}</span>
+        </div>
+    </header>
+    
+    <form method="post" class="form">
+        <label for="BuildID" class="label">
+            build tag
+            <input type="text" id="BuildID" name="buildid" class="form__input input" placeholder="BUILD TAG" maxlength="27">
+        </label>
+        <label for="Grab" class="label">
+            FILEGRABBER EXTENSIONS
+            <input id="Grab" name="grabext" type="text" class="form__input input" placeholder=".doc,.png,.txt" maxlength="36">
+        </label>
+        <label for="Grabe" class="label">
+            FILEGRABBER PATH
+            <input id="Grabe" name="grabpath" type="text" class="form__input input" placeholder="APPDATA" maxlength="28">
+        </label>
+        <label for="Domain" class="label">
+            DOMAIN DETECT
+            <input id="Domain" name="domaindetect" type="text" class="form__input input" placeholder="WILDBERRIES.RU" maxlength="27">
+        </label>
+        <label for="serv" class="label">
+            SERVER IP
+            <input id="serv" name="server" type="text" class="form__input input" placeholder="127.0.0.1:28015" maxlength="23">
+        </label>
+        <button class="btn form__btn" type="submit">
+            Build
+          </button>
+    </form>
+
+</body>
+</html>
