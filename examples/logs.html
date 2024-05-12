@@ -46,12 +46,13 @@
         </div>
         <div class="buttons">
             <button class="btn">
-                <img src="../assets/images/icons/download.svg" href = "/exportall/" alt="download all">
+                <img src="../assets/images/icons/download.svg" href = "/exportall/" >
                 DOWNLOAD ALL
             </button>
-        <a href="/deleteall/">
-    <img src="../assets/images/icons/trash.svg" alt="delete all">
-    </a>
+            <button class="btn">
+                <img src="../assets/images/icons/trash.svg"  href= "/deleteall/">
+                delete all
+            </button>
         </div>
         <div class="table">
             <div class="table__row table__header">
@@ -77,7 +78,7 @@
                 <div class="table__cell">{{.Telegram}}</div>
                 <div class="table__cell">{{.Steam}}</div>
                 <div class="table__cell">
-                    <a class="btn btn_small" href="/downloadlog?logname={{.LogName}}"> 3KB</a>
+                    <a class="btn btn_small" href="/downloadlog?logname={{.LogName}}"> {{.LogSize}}KB</a>
                     <a class="btn btn_small" href="/deletelog?logname={{.LogName}}"><img src="../assets/images/icons/trash.svg" alt="delete"></a>
                 </div>
             </div>
